@@ -1,25 +1,21 @@
-Google API Bundle
-=================
+# TakeOffset API Bundle
 
-A symfony2 bundle to communicate to Google API. This bundle is a Symfony2 wrapper for the [google apiclient][1].
-There are some services not yet implemented. Please submit a PR and I'm happy to merge.
+## Introduction 
+A symfony2 bundle API client for restful calls to TakeOffset Carbon Offset API. 
 
-
-
-Installation
-------------
+##Installation
 
 ### Step 1: Using Composer
 
 Install it with Composer!
 
-```js
+```json
 // composer.json
 {
     // ...
     require: {
         // ...
-        "happyr/google-api-bundle": "~2.1",
+        "benmort/takeoffset-api-bundle": "dev-master",
     }
 }
 ```
@@ -41,25 +37,27 @@ To register the bundles with your kernel:
 // in AppKernel::registerBundles()
 $bundles = array(
     // ...
-    new HappyR\Google\ApiBundle\HappyRGoogleApiBundle(),
+    new Takeoffset\ApiBundle\TakeoffetApiBundle(),
     // ...
 );
 ```
 
 ### Step 3: Configure the bundle
 
-``` yaml
+```yaml
 # app/config/config.yml
-# you will get these parameters form https://code.google.com/apis/console/"
-happy_r_google_api:
+# you will get these parameters form your takeoffset admin panel
+takeoffset_api:
   application_name: MySite
-  oauth2_client_id: 
-  oauth2_client_secret: 
-  oauth2_redirect_uri: 
-  developer_key: 
+  oauth2_client_id: XXXX
+  oauth2_client_secret: XXXX
+  oauth2_redirect_uri: XXXXX
+  developer_key: XXXXX
   site_name: mysite.com
 ```
 
+## Todo
+- Log management
+- Tests
 
-[1]: https://github.com/google/google-api-php-client
-# takeoffset-api-bundle
+> Owned and operated by TakeOffset Pty. Ltd. Corporation
