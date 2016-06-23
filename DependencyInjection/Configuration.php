@@ -22,7 +22,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
           ->children()
-            ->scalarNode('key')->isRequired()->cannotBeEmpty()->end()
+            ->scalarNode('auth_key')->isRequired()->cannotBeEmpty()->end()
           //end rootnode children
           ->end();
 
