@@ -20,7 +20,6 @@
         "mockery/mockery": "*"
     },
     "autoload": {
-        "psr-0": { "TakeOffset\\ApiBundle": "" }
-    },
-    "target-dir": "TakeOffset/ApiBundle"  
+        "psr-4": { "TakeOffset\\ApiBundle": "" }
+    }
 }
