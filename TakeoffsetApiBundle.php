@@ -1,14 +1,14 @@
 <?php
 
-namespace Takeoffset\ApiBundle;
+namespace TakeOffset\ApiBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Class TakeoffsetApiBundle
+ * Class TakeOffsetApiBundle
  *
- * This symfony2 bundle is a API client for Takeoffset Carbon Offset Market.
+ * This symfony2 bundle is a API client for TakeOffset Carbon Offset Market.
  */
-class TakeoffsetApiBundle extends Bundle
+class TakeOffsetApiBundle extends Bundle
 {
 }

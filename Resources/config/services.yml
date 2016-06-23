@@ -1,28 +1,27 @@
 services:
     takeoffset.api.client:
-        class: Takeoffset\ApiBundle\Services\Client
+        class: TakeOffset\ApiBundle\Services\Client
         arguments: [%takeoffset_api%, @?logger]
         tags:
             - { name: monolog.logger, channel: client }
-
     takeoffset.api.offset:
-        class: Takeoffset\ApiBundle\Services\OffsetService
+        class: TakeOffset\ApiBundle\Services\OffsetService
         arguments: [@takeoffset.api.client]
     takeoffset.api.trade:
-        class: Takeoffset\ApiBundle\Services\TradeService
+        class: TakeOffset\ApiBundle\Services\TradeService
         arguments: [@takeoffset.api.client]
     takeoffset.api.distance:
-        class: Takeoffset\ApiBundle\Services\DistanceService
+        class: TakeOffset\ApiBundle\Services\DistanceService
         arguments: [@takeoffset.api.client]
     takeoffset.api.invoice:
-        class: Takeoffset\ApiBundle\Services\InvoiceService
+        class: TakeOffset\ApiBundle\Services\InvoiceService
         arguments: [@takeoffset.api.client]
     takeoffset.api.receipt:
-        class: Takeoffset\ApiBundle\Services\ReceiptService
+        class: TakeOffset\ApiBundle\Services\ReceiptService
         arguments: [@takeoffset.api.client]
     takeoffset.api.user:
-        class: Takeoffset\ApiBundle\Services\UserService
+        class: TakeOffset\ApiBundle\Services\UserService
         arguments: [@takeoffset.api.client]
     takeoffset.api.airport:
-        class: Takeoffset\ApiBundle\Services\AirportService
+        class: TakeOffset\ApiBundle\Services\AirportService
         arguments: [@takeoffset.api.client]

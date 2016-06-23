@@ -1,15 +1,15 @@
 <?php
 
-namespace Takeoffset\ApiBundle\Client;
+namespace TakeOffset\ApiBundle\Client;
 
 use Psr\Log\LoggerInterface;
 
 /**
- * Class TakeoffsetClientRest
+ * Class TakeOffsetClientRest
  *
- * This is the google client that is used by almost every api
+ * This is the TakeOffset client
  */
-class TakeoffsetClientRest
+class TakeOffsetClientRest
 {
     /**
      * @var \Google_Client client
@@ -43,7 +43,7 @@ class TakeoffsetClientRest
     /**
      * @return \Google_Client
      */
-    public function getTakeoffsetClientRest()
+    public function getTakeOffsetClientRest()
     {
         return $this->client;
     }

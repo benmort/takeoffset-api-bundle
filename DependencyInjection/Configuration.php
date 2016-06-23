@@ -1,6 +1,6 @@
 <?php
 
-namespace Takeoffset\ApiBundle\DependencyInjection;
+namespace TakeOffset\ApiBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -27,110 +27,8 @@ class Configuration implements ConfigurationInterface
           ->end();
 
         //let use the api defaults
-        //$this->addServicesSection($rootNode);
+        $this->addServicesSection($rootNode);
 
         return $treeBuilder;
-    }
-
-
-    /**
-     * Add the service section
-     *
-     * @param ArrayNodeDefinition $rootNode
-     *
-     */
-    private function addServicesSection(ArrayNodeDefinition $rootNode)
-    {
-        $rootNode->children()
-           ->arrayNode('services')->addDefaultsIfNotSet()->children()
-                 ->arrayNode('analytics')->addDefaultsIfNotSet()->children()
-                    ->scalarNode('scope')
-                        ->defaultValue('https://www.googleapis.com/auth/analytics.readonly')
-                        ->cannotBeEmpty()
-                    ->end()
-                 ->end()->end()
-
-                 ->arrayNode('calendar')->addDefaultsIfNotSet()->children()
-                    ->arrayNode('scope')
-                        ->prototype('scalar')->end()
-                        ->isRequired()
-                        ->defaultValue(array(
-                                  "https://www.googleapis.com/auth/calendar",
-                                  "https://www.googleapis.com/auth/calendar.readonly",
-                              ))
-                        ->cannotBeEmpty()
-                    ->end()
-                 ->end()->end()
-
-                 ->arrayNode('books')->addDefaultsIfNotSet()->children()
-                    ->scalarNode('scope')
-                        ->defaultValue('https://www.googleapis.com/auth/books')
-                        ->cannotBeEmpty()
-                    ->end()
-                 ->end()->end()
-
-                 ->arrayNode('latitude')->addDefaultsIfNotSet()->children()
-                    ->arrayNode('scope')
-                        ->prototype('scalar')->end()
-                        ->isRequired()
-                        ->defaultValue(array(
-                                  'https://www.googleapis.com/auth/latitude.all.best',
-                                  'https://www.googleapis.com/auth/latitude.all.city',
-                              ))
-                        ->cannotBeEmpty()
-                    ->end()
-                 ->end()->end()
-
-                 ->arrayNode('moderator')->addDefaultsIfNotSet()->children()
-                    ->scalarNode('scope')
-                        ->defaultValue('https://www.googleapis.com/auth/moderator')
-                        ->cannotBeEmpty()
-                    ->end()
-                 ->end()->end()
-
-                 ->arrayNode('oauth2')->addDefaultsIfNotSet()->children()
-                    ->arrayNode('scope')
-                        ->prototype('scalar')->end()
-                        ->isRequired()
-                        ->defaultValue(array(
-                                  'https://www.googleapis.com/auth/userinfo.profile',
-                                  'https://www.googleapis.com/auth/userinfo.email',
-                              ))
-                        ->cannotBeEmpty()
-                    ->end()
-                 ->end()->end()
-
-                 ->arrayNode('plus')->addDefaultsIfNotSet()->children()
-                    ->scalarNode('scope')
-                        ->defaultValue('https://www.googleapis.com/auth/plus.me')
-                        ->cannotBeEmpty()
-                    ->end()
-                 ->end()->end()
-
-                 ->arrayNode('siteVerification')->addDefaultsIfNotSet()->children()
-                    ->scalarNode('scope')
-                        ->defaultValue('https://www.googleapis.com/auth/siteverification')
-                        ->cannotBeEmpty()
-                    ->end()
-                 ->end()->end()
-
-                 ->arrayNode('tasks')->addDefaultsIfNotSet()->children()
-                    ->scalarNode('scope')
-                        ->defaultValue('https://www.googleapis.com/auth/tasks')
-                        ->cannotBeEmpty()
-                    ->end()
-                 ->end()->end()
-
-                 ->arrayNode('urlshortener')->addDefaultsIfNotSet()->children()
-                    ->scalarNode('scope')
-                        ->defaultValue('https://www.googleapis.com/auth/urlshortener')
-                        ->cannotBeEmpty()
-                    ->end()
-                 ->end()->end()
-
-            //end services
-            ->end()->end()
-
-        ;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Takeoffset\ApiBundle\Tests;
+namespace TakeOffset\ApiBundle\Tests;
 
 /**
  * Class ServiceTest

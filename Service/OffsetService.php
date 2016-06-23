@@ -10,18 +10,18 @@ namespace HappyR\Google\ApiBundle\Services;
 class OffsetService
 {
     /**
-     * @var TakeoffsetClientRest client
+     * @var TakeOffsetClientRest client
      */
     public $client;
 
     /**
      * Constructor
-     * @param TakeoffsetClientRest $client
+     * @param TakeOffsetClientRest $client
      */
-    public function __construct(TakeoffsetClientRest $client)
+    public function __construct(TakeOffsetClientRest $client)
     {
         $this->client = $client;
-        parent::__construct($client->getTakeoffsetClientRest());
+        parent::__construct($client->getTakeOffsetClientRest());
     }
 
     /**

@@ -34,7 +34,7 @@ To register the bundles with your kernel inside the AppKernel::registerBundles()
 <?php
 
 $bundles = array(
-    new Takeoffset\ApiBundle\TakeoffetApiBundle(),
+    new TakeOffset\ApiBundle\TakeoffetApiBundle(),
 );
 ```
 
