@@ -1,15 +1,15 @@
 <?php
 
-namespace HappyR\Google\ApiBundle\Services;
+namespace Takeoffset\ApiBundle\Client;
 
 use Psr\Log\LoggerInterface;
 
 /**
- * Class GoogleClient
+ * Class TakeoffsetClientRest
  *
  * This is the google client that is used by almost every api
  */
-class GoogleClient
+class TakeoffsetClientRest
 {
     /**
      * @var \Google_Client client
@@ -43,7 +43,7 @@ class GoogleClient
     /**
      * @return \Google_Client
      */
-    public function getGoogleClient()
+    public function getTakeoffsetClientRest()
     {
         return $this->client;
     }
@@ -53,7 +53,7 @@ class GoogleClient
      */
     public function setAccessToken($accessToken)
     {
-        $this -> client -> setAccessToken($accessToken);
+        $this->client->setAccessToken($accessToken);
     }
 
     /**

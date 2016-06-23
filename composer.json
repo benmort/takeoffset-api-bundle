@@ -1,8 +1,8 @@
 {
     "name": "benmort/takeoffset-api-bundle",
     "type": "symfony-bundle",
-    "description": "This symfony2 bundle is a API client for Takeoffset Carbon Offset Market",
-    "keywords": ["Takeoffset API"],
+    "description": "This symfony2 bundle is an API client for Takeoffset Carbon Offset Market",
+    "keywords": ["Takeoffset API", "Carbon", "Offset"],
     "homepage": "https://github.com/benmort/takeoffset-api-bundle",
     "license": "MIT",
     "authors": [

@@ -1,6 +1,6 @@
 <?php
 
-namespace HappyR\Google\ApiBundle\DependencyInjection;
+namespace Takeoffset\ApiBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -18,22 +18,11 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('happy_r_google_api');
+        $rootNode = $treeBuilder->root('takeoffset_api');
 
         $rootNode
           ->children()
-            ->scalarNode('application_name')->isRequired()->cannotBeEmpty()->end()
-            ->scalarNode('oauth2_client_id')->isRequired()->cannotBeEmpty()->end()
-            ->scalarNode('oauth2_client_secret')->isRequired()->cannotBeEmpty()->end()
-            ->scalarNode('oauth2_redirect_uri')->isRequired()->cannotBeEmpty()->end()
-            ->scalarNode('developer_key')->isRequired()->cannotBeEmpty()->end()
-            ->scalarNode('site_name')->isRequired()->cannotBeEmpty()->end()
-
-            ->scalarNode('authClass')->end()
-            ->scalarNode('ioClass')->end()
-            ->scalarNode('cacheClass')->end()
-            ->scalarNode('basePath')->end()
-            ->scalarNode('ioFileCache_directory')->end()
+            ->scalarNode('key')->isRequired()->cannotBeEmpty()->end()
           //end rootnode children
           ->end();
 

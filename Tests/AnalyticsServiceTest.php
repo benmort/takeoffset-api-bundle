@@ -1,12 +1,9 @@
 <?php
 
-namespace HappyR\Google\ApiBundle\Tests;
+namespace Takeoffset\ApiBundle\Tests;
 
 /**
- * Class AnalyticsServiceTest
- *
- * @author Tobias Nyholm
- *
+ * Class ServiceTest
  */
 class DummyTest extends \PHPUnit_Framework_TestCase
 {

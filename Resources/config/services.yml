@@ -1,18 +1,28 @@
 services:
-    happyr.google.api.client:
-        class: HappyR\Google\ApiBundle\Services\GoogleClient
-        arguments: [%happy_r_google_api%, @?logger]
+    takeoffset.api.client:
+        class: Takeoffset\ApiBundle\Services\Client
+        arguments: [%takeoffset_api%, @?logger]
         tags:
-            - { name: monolog.logger, channel: google_client }
+            - { name: monolog.logger, channel: client }
 
-    happyr.google.api.analytics:
-        class: HappyR\Google\ApiBundle\Services\AnalyticsService
-        arguments: [@happyr.google.api.client]
-    
-    happyr.google.api.youtube:
-        class: HappyR\Google\ApiBundle\Services\YoutubeService
-        arguments: [@happyr.google.api.client]
-
-    happyr.google.api.groups_migration:
-        class: HappyR\Google\ApiBundle\Services\GroupsMigrationService
-        arguments: [@happyr.google.api.client]
+    takeoffset.api.offset:
+        class: Takeoffset\ApiBundle\Services\OffsetService
+        arguments: [@takeoffset.api.client]
+    takeoffset.api.trade:
+        class: Takeoffset\ApiBundle\Services\TradeService
+        arguments: [@takeoffset.api.client]
+    takeoffset.api.distance:
+        class: Takeoffset\ApiBundle\Services\DistanceService
+        arguments: [@takeoffset.api.client]
+    takeoffset.api.invoice:
+        class: Takeoffset\ApiBundle\Services\InvoiceService
+        arguments: [@takeoffset.api.client]
+    takeoffset.api.receipt:
+        class: Takeoffset\ApiBundle\Services\ReceiptService
+        arguments: [@takeoffset.api.client]
+    takeoffset.api.user:
+        class: Takeoffset\ApiBundle\Services\UserService
+        arguments: [@takeoffset.api.client]
+    takeoffset.api.airport:
+        class: Takeoffset\ApiBundle\Services\AirportService
+        arguments: [@takeoffset.api.client]

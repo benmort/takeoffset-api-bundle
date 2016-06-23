@@ -7,14 +7,12 @@ A symfony2 bundle API client for restful calls to TakeOffset Carbon Offset API.
 
 ### Step 1: Using Composer
 
-Install it with Composer!
+Install it with Composer
 
+- composer.json
 ```json
-// composer.json
 {
-    // ...
     require: {
-        // ...
         "benmort/takeoffset-api-bundle": "dev-master",
     }
 }
@@ -29,31 +27,26 @@ $ php composer.phar update
 
 ### Step 2: Register the bundle
 
-To register the bundles with your kernel:
+To register the bundles with your kernel inside the AppKernel::registerBundles():
 
+- app.kernal
 ```php
 <?php
 
-// in AppKernel::registerBundles()
 $bundles = array(
-    // ...
     new Takeoffset\ApiBundle\TakeoffetApiBundle(),
-    // ...
 );
 ```
 
 ### Step 3: Configure the bundle
 
+# You will get these parameters form your takeoffset admin panel:
+
+- app/config/config.yml
 ```yaml
-# app/config/config.yml
-# you will get these parameters form your takeoffset admin panel
+
 takeoffset_api:
-  application_name: MySite
-  oauth2_client_id: XXXX
-  oauth2_client_secret: XXXX
-  oauth2_redirect_uri: XXXXX
-  developer_key: XXXXX
-  site_name: mysite.com
+  key: XXXXXXXXXXXXXXX
 ```
 
 ## Todo
